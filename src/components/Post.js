@@ -8,7 +8,7 @@ class Post extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Autor email='wkerlyson.batista@uece.br' nickname='wkerlysonb' />
+                <Autor email={this.props.email} nickname={this.props.nickname} />
                 <Image source={this.props.image} style={styles.image} />
                 <Comments comments={this.props.comments} />
                 <AddComment />

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     },
     nickname: {
         color: '#444',
-        marginVertical: 10,
+        marginVertical: 2,
         fontSize: 15,
         fontWeight: 'bold'
     }

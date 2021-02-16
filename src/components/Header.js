@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.rowContainer}>
-                    <Image source={icon} style={styles.image} />
+                    {/*<Image source={icon} style={styles.image} /> -->*/}
                     <Text style={styles.title}>Instagram</Text>
                 </View>
             </View>
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
     title: {
         color: '#000',
         fontFamily: 'shelter',
-        height: 30,
-        fontSize: 28
+        height: 40,
+        fontSize: 30
     }
 })
 

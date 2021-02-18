@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, StyleSheet, Text, TextInput, TouchableWithoutFeedback as Touch, View } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class AddComment extends Component {
 
@@ -24,7 +24,7 @@ export default class AddComment extends Component {
                         onChangeText={comment => this.setState({ comment })}
                         onSubmitEditing={this.handleAddComment} />
                     <Touch onPress={() => this.setState({ editMode: false })}>
-                        <Icon name='times' size={15} color='#555' />
+                        <Icon name='clear' size={20} color='#0a0742' />
                     </Touch>
                 </View>
             )
@@ -32,7 +32,7 @@ export default class AddComment extends Component {
             commentArea = (
                 <Touch onPress={() => this.setState({ editMode: true })}>
                     <View style={styles.container}>
-                        <Icon name='comment-o' size={15} color='#555' />
+                        <Icon name='comment' size={15} color='#0a0742' />
                         <Text style={styles.caption}>
                             Adicione um comentário...
                         </Text>

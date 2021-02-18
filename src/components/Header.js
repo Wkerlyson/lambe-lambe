@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { Alert } from 'react-native';
+import { TouchableNativeFeedback } from 'react-native';
 import { Image, Platform, StyleSheet, Text, View } from 'react-native';
-import icon from '../../assets/imgs/icon.png';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 class Header extends Component {
     render() {
@@ -8,9 +11,14 @@ class Header extends Component {
             <View style={styles.container}>
                 <View style={styles.rowContainer}>
                     {/*<Image source={icon} style={styles.image} /> -->*/}
-                    <Text style={styles.title}>Instagram</Text>
+                    <Text style={styles.title}>Instagran</Text>
+                    <View style={styles.camera}>
+                        <TouchableOpacity onPress={() => { Alert.alert('Direct', 'Quem sabe no futuro...') }}>
+                            <Icon name='send' color='#0a0742' size={25} style={{ transform: [{ rotate: '-38deg' }] }} />
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
+            </View >
         )
     }
 }
@@ -19,9 +27,9 @@ const styles = StyleSheet.create({
     container: {
         marginTop: Platform.OS === 'ios' ? 20 : 0,
         padding: 10,
-        borderBottomWidth: 1,
+        borderBottomColor: 1,
         borderColor: '#BBB',
-        width: '100%'
+        width: '100%',
     },
     rowContainer: {
         flexDirection: 'row',
@@ -33,10 +41,14 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     title: {
-        color: '#000',
+        color: '#0a0742',
         fontFamily: 'shelter',
         height: 40,
         fontSize: 30
+    },
+    camera: {
+        flex: 1,
+        flexDirection: 'row-reverse',
     }
 })
 

@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
         color: '#444',
         marginVertical: 2,
         fontSize: 15,
-        fontWeight: 'bold'
+        fontWeight: '400'
     }
 })

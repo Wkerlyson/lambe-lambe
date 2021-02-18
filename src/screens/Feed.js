@@ -12,7 +12,7 @@ export default class Feed extends Component {
                 id: Math.random(),
                 nickname: 'wkerlysonb',
                 email: 'wkerlyson.batista@uece.br',
-                image: require('../../assets/imgs/boat.jpg'),
+                image: require('../../assets/imgs/bw.jpg'),
                 comments: [
                     {
                         nickname: 'joh.s',
@@ -34,7 +34,7 @@ export default class Feed extends Component {
     }
     render() {
         return (
-            <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
                 <Header />
                 <FlatList data={this.state.posts}
                     keyExtractor={item => `${item.id}`}
@@ -43,7 +43,7 @@ export default class Feed extends Component {
 
                 </FlatList>
 
-            </SafeAreaView>
+            </View>
         );
     }
 }
@@ -53,6 +53,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f5fcff'
     }
 })

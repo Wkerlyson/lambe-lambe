@@ -1,14 +1,22 @@
 import React from 'react'
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
+import { createBottomTabNavigator, createStackNavigator, createSwitchNavigator } from 'react-navigation'
 import Feed from "./screens/Feed";
 import AddPhoto from './screens/AddPhoto';
 import Profile from './screens/Profile';
 import Login from './screens/Login';
+import Register from './screens/Register';
 
-const loginOrProfileRouter = createStackNavigator({
+const authRouter = createStackNavigator({
+    Login: { screen: Login, navigationOptions: { title: 'Login' } },
+    Register: { screen: Register, navigationOptions: { title: 'Register' } }
+}, {
+    initialRoute: 'Login'
+})
+
+const loginOrProfileRouter = createSwitchNavigator({
     Profile: Profile,
-    Auth: Login
+    Auth: authRouter
 }, {
     initialRoute: 'Profile'
 })

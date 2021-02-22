@@ -5,37 +5,30 @@ import { TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native';
 import { View } from 'react-native';
 
-export default class Login extends Component {
+export default class Register extends Component {
     state = {
+        name: '',
         email: '',
         password: ''
-    }
-
-    login = () => {
-        this.props.navigation.navigate('Profile')
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <TextInput placeholder='e-mail' style={styles.input}
-                    autoFocus={true} keyboardType='email-address'
-                    value={this.state.email}
+                <TextInput autoFocus={true} style={styles.input}
+                    value={this.state.name} placeholder='Nome'
+                    onChangeText={name => this.setState({ name })} />
+
+                <TextInput style={styles.input} keyboardType='email-address'
+                    value={this.state.email} placeholder='E-mail'
                     onChangeText={email => this.setState({ email })} />
 
-                <TextInput placeholder='Senha' style={styles.input}
-                    secureTextEntry={true}
-                    value={this.state.password}
+                <TextInput style={styles.input} secureTextEntry={true}
+                    value={this.state.password} placeholder='Senha'
                     onChangeText={password => this.setState({ password })} />
-                <TouchableOpacity onPress={this.login} style={styles.button}>
-                    <Text style={styles.buttonText}>Login</Text>
-                </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {
-                    this.props.navigation.navigate('Register')
-                }} style={styles.button}>
-
-                    <Text style={styles.buttonText}>Criar nova conta</Text>
+                <TouchableOpacity onPress={() => { }} style={styles.button}>
+                    <Text style={styles.buttonText}>Salvar</Text>
                 </TouchableOpacity>
             </View>
         );

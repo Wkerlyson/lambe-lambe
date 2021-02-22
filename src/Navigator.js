@@ -1,11 +1,17 @@
 import React from 'react'
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { createBottomTabNavigator } from 'react-navigation'
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 import Feed from "./screens/Feed";
 import AddPhoto from './screens/AddPhoto';
 import Profile from './screens/Profile';
+import Login from './screens/Login';
 
-
+const loginOrProfileRouter = createStackNavigator({
+    Profile: Profile,
+    Auth: Login
+}, {
+    initialRoute: 'Profile'
+})
 
 const MenuRoutes = {
     Feed: {
@@ -28,7 +34,7 @@ const MenuRoutes = {
     },
     Profile: {
         name: 'Profile',
-        screen: Profile,
+        screen: loginOrProfileRouter,
         navigationOptions: {
             title: 'Add Picture',
             tabBarIcon: ({ tintColor }) =>

@@ -76,7 +76,7 @@ export default class AddPhoto extends Component {
                             value={this.state.comment}
                             onChangeText={comment => this.setState({ comment })} />
                         <TouchableOpacity onPress={this.save} style={styles.buttonSave}>
-                            <Text style={styles.buttonTextSave}>SALVAR</Text>
+                            <Text style={styles.buttonTextSave}>salvar</Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginLeft: 5,
         paddingVertical: 10,
-        paddingHorizontal: '30%',
+        paddingHorizontal: 50,
         borderRadius: 40
     },
     buttonText: {
